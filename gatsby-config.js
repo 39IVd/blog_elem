@@ -2,34 +2,35 @@ let siteMetadata = {
     title: `Paige Lee`,
     capitalizeTitleOnHome: false,
     logo: `/images/paigelog4.png`,
-    icon: `/images/icon.png`,
+    icon: `/images/paigelog4.png`,
     titleImage: `/images/wall1.jpg`,
-    introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-    author: `@_akzhy`,
+    introTag: `DEVELOPER | PROGRAMMER`,
+    description: `This is Paige Log :)`,
+    author: `@paige`,
     blogItemsPerPage: 10,
     portfolioItemsPerPage: 10,
     darkmode: true,
     switchTheme: true,
+    // 상단 navigation bar 이름 변경
     navLinks: [
         {
             name: "HOME",
             url: "/"
         },
         {
-            name: "ABOUT",
+            name: "ABOUT ME",
             url: "/about"
         },
         {
-            name: "BLOG",
+            name: "IT",
             url: "/blog"
         },
         {
-            name: "PORTFOLIO",
+            name: "LIFE",
             url: "/portfolio"
         },
         {
-            name: "CONTACT",
+            name: "MUSIC",
             url: "/contact"
         }
     ],
@@ -43,6 +44,7 @@ let siteMetadata = {
             url: "https://github.com/akzhy/gatsby-starter-elemental"
         }
     ],
+    // social 소셜 계정 링크 변경
     social: [
         {
             name: "Github",

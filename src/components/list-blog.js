@@ -37,12 +37,12 @@ export default function() {
             }
         }
     `);
-
+        // 홈 화면에서 Recent Posts (Blog list) 표시
     if (query.allMarkdownRemark.edges.length > 0) {
         return (
             <section id="blog" className="container">
                 <div className="section-title">
-                    <SectionTitle title="BLOG" />
+                    <SectionTitle title="Recent Posts" />
                 </div>
                 <BlogItems data={query} />
             </section>

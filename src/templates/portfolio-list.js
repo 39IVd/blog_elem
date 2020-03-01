@@ -13,7 +13,7 @@ class PortfolioList extends React.Component {
             return (
                 <section id="portfolio" className="container">
                     <div className="section-title">
-                        <SectionTitle title="PORTFOLIO" />
+                        <SectionTitle title="Life" />
                     </div>
                     <PortfolioItems data={query} />
                     <Pagination

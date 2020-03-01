@@ -16,7 +16,9 @@ class BlogItem extends React.Component {
 
     render() {
         return (
-            <div className="item col s12 m6">
+            // blog list 블로그 리스트 grid 조절 
+            // grid col sm 방식.
+            <div className="item col s12 m4">
                 <div className="box">
                     <div className="image">
                         <Img

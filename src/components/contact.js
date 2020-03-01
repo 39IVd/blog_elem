@@ -109,7 +109,7 @@ class Contact extends React.Component {
         return (
             <section id="contact" className="container">
                 <div className="section-title">
-                    <SectionTitle title="CONTACT" />
+                    <SectionTitle title="Music" />
                 </div>
                 <div
                     className={"row" + (this.showContactForm ? "" : " no-form")}

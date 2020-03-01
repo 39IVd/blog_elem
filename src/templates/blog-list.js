@@ -5,7 +5,10 @@ import BlogItems from "../components/items-blog";
 import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
-
+// blog -> it
+// contact -> music
+// portfolio -> life
+// blog 카테고리 내부 화면
 class BlogList extends React.Component {
     render() {
         const query = this.props.datas;
@@ -13,7 +16,7 @@ class BlogList extends React.Component {
             return (
                 <section id="blog" className="container">
                     <div className="section-title">
-                        <SectionTitle title="BLOG" />
+                        <SectionTitle title="IT" />
                     </div>
                     <BlogItems data={query} />
                     <Pagination

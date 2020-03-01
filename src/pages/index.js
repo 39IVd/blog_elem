@@ -126,7 +126,8 @@ class IndexPage extends React.Component {
                     </div>
                 </div>
                 <BlogList />
-                <Contact />
+                {/* TODO : Tags 추가할것!! */}
+                {/* <Contact /> */}
             </Layout>
         );
     }
