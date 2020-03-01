@@ -1,9 +1,9 @@
 let siteMetadata = {
-    title: `Elemental`,
-    capitalizeTitleOnHome: true,
-    logo: `/images/logo.png`,
+    title: `UDIPP`,
+    capitalizeTitleOnHome: false,
+    logo: `/images/paigelog4.png`,
     icon: `/images/icon.png`,
-    titleImage: `/images/wall.jpg`,
+    titleImage: `/images/wall1.jpg`,
     introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
     author: `@_akzhy`,

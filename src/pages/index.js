@@ -76,7 +76,7 @@ class IndexPage extends React.Component {
                 />
                 <div
                     className="wall"
-                    style={{ height: this.state.winHeight + "px" }}
+                    style={{ height: "100px" }}
                 >
                     <div className="intro container">
                         <div className="main-title text-primary">
@@ -97,13 +97,6 @@ class IndexPage extends React.Component {
                                     width="100"
                                     height="100"
                                 >
-                                    <rect
-                                        x="0"
-                                        y="0"
-                                        className="fill-primary"
-                                        width="100"
-                                        height="100"
-                                    />
                                     <image
                                         xlinkHref="/images/wall.jpg"
                                         height="100"
@@ -125,22 +118,13 @@ class IndexPage extends React.Component {
                                               .title}
                                 </text>
                             </svg>
-                        </div>
-                        <p className="tag-line text-secondary">
-                            {this.props.data.site.siteMetadata.introTag}
-                        </p>
-                        <p className="caption text-tertiary">
-                            {this.props.data.site.siteMetadata.description}
-                        </p>
-                        <a href="#portfolio" className="btn">
-                            SEE WORKS
-                        </a>
+                        </div> 
                     </div>
-                    <div className="social-buttons">
+                    <div className="social-buttons"
+                     style={{ top: "250px" }}>
                         <SocialLinks />
                     </div>
                 </div>
-                <PortfolioList />
                 <BlogList />
                 <Contact />
             </Layout>
