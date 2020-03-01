@@ -19,23 +19,23 @@ export default function() {
     return (
         <footer className="footer">
             <div className="container">
-                <div className="logo">
+                {/* <div className="logo">
                     <Link to="/" title={query.site.siteMetadata.title}>
                         <Logo />
                     </Link>
-                </div>
-                <div className="navlinks text-secondary">
+                </div> */}
+                {/* <div className="navlinks text-secondary">
                     <Navlinks />
-                </div>
-                <div
+                </div> */}
+                {/* <div
                     className="navlinks text-secondary"
                     style={{ marginTop: "20px" }}
                 >
                     <FooterLinks />
-                </div>
+                </div> */}
                 <p className="text-primary f-d">
-                    Copyright &copy; {query.site.siteMetadata.title}{" "}
-                    {new Date().getFullYear()}
+                    &copy; {new Date().getFullYear()} {query.site.siteMetadata.title}{" "}, All Rights Reserved.
+                    
                 </p>
             </div>
         </footer>

@@ -1,5 +1,5 @@
 let siteMetadata = {
-    title: `UDIPP`,
+    title: `Paige Lee`,
     capitalizeTitleOnHome: false,
     logo: `/images/paigelog4.png`,
     icon: `/images/icon.png`,
@@ -45,23 +45,23 @@ let siteMetadata = {
     ],
     social: [
         {
-            name: "Facebook",
-            icon: "/images/Facebook.svg",
-            url: "#"
+            name: "Github",
+            icon: "/images/github.svg",
+            url: "https://github.com/39IVd"
         },
         {
-            name: "Twitter",
-            icon: "/images/Twitter.svg",
-            url: "#"
+            name: "Gmail",
+            icon: "/images/gmail.svg",
+            url: "mailto:tmdwn4174@gmail.com"
         },
         {
             name: "Instagram",
-            icon: "/images/Instagram.svg",
+            icon: "/images/instagram.svg",
             url: "#"
         },
         {
             name: "Youtube",
-            icon: "/images/Youtube.svg",
+            icon: "/images/youtube.svg",
             url: "#"
         }
     ],
