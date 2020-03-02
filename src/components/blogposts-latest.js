@@ -40,7 +40,7 @@ export default function(props) {
         return (
             <section id="latest-posts" className="container">
                 <div>
-                    <h2>Latest Blogposts</h2>
+                    <h2>Recent Posts</h2>
                 </div>
                 <BlogItems data={query} remove={props.id} />
             </section>
