@@ -1,5 +1,46 @@
 #blog{
 	// blog list 블로그 리스트 관련 css
+	// blog categories
+	.row {
+		content : "";
+		display: table;
+		clear : both;
+		.categoryBar {
+			// width : 150px
+			// position: fixed
+			// z-index: 1
+			// top: 200px
+			// left: 50px
+			height: 100%;
+			// overflow-x: hidden
+			float: left;
+			width : 17%;
+			// padding: 40px;
+			// background-color: #fcf9ae
+			.cat_1 {
+				margin-top: 10px;
+				a {
+					font-size: 18px;
+					font-weight: bold;
+					// font-family: Arial
+					// color: $black;
+				}
+				.cat_2 {
+					font-size: 14px;
+					margin-left: 10px;
+				}
+			}
+		
+		}
+		.posts {
+			// margin-left : 150px
+			float: left;
+			width : 70%;
+			height : wrap-content;
+			// padding: 50px;
+		}
+	}
+	// 블로그 리스트 각 item의 style
 	.item{
 		padding: 20px;
 
@@ -9,8 +50,8 @@
 			.image{
 				position: relative;
 			}
-
-			.content{
+			// image 하단 내용
+			.content{	
 				padding: 20px 10px;
 
 				h3{
