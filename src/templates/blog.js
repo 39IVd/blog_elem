@@ -14,20 +14,22 @@ export default function({ data }) {
                 lang="en"
                 title={data.markdownRemark.frontmatter.title}
                 description={data.markdownRemark.frontmatter.description}
-                image={data.markdownRemark.frontmatter.image.publicURL}
+                // image={data.markdownRemark.frontmatter.image.publicURL}
             />
             <div className="container">
                 <article className="blog-post">
-                    {data.markdownRemark.frontmatter.banner != null && (
-                        <div className="banner">
-                            <Img
-                                fluid={
-                                    data.markdownRemark.frontmatter.banner
-                                        .childImageSharp.fluid
-                                }
-                            />
-                        </div>
-                    )}
+                    {data.markdownRemark.frontmatter.banner != null 
+                    // && (
+                    //     <div className="banner">
+                    //         <Img
+                    //             fluid={
+                    //                 data.markdownRemark.frontmatter.banner
+                    //                     .childImageSharp.fluid
+                    //             }
+                    //         />
+                    //     </div>
+                    // )
+                    }
                     <div className="head text-primary">
                         <h1>{data.markdownRemark.frontmatter.title}</h1>
                         <p className="post-date">
@@ -58,25 +60,27 @@ export const query = graphql`
                 title
                 date
                 description
-                image {
-                    publicURL
-                    childImageSharp {
-                        fluid(maxWidth: 1000) {
-                            srcSet
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
-                banner {
-                    publicURL
-                    childImageSharp {
-                        fluid(maxHeight: 600, maxWidth: 1920) {
-                            srcSet
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
+                
             }
         }
     }
 `;
+
+// image {
+//     publicURL
+//     childImageSharp {
+//         fluid(maxWidth: 1000) {
+//             srcSet
+//             ...GatsbyImageSharpFluid
+//         }
+//     }
+// }
+// banner {
+//     publicURL
+//     childImageSharp {
+//         fluid(maxHeight: 600, maxWidth: 1920) {
+//             srcSet
+//             ...GatsbyImageSharpFluid
+//         }
+//     }
+// }
