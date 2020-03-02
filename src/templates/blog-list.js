@@ -20,16 +20,16 @@ class BlogList extends React.Component {
                             <div className="cat_1">
                                 <a href="">WEB</a>
                                 <div className="cat_2">
-                                    <a href="">- JavaScript</a><br/>
-                                    <a href="">- NodeJS</a><br/>
-                                    <a href="">- React</a><br/>
+                                    <a href="">- JavaScript</a>
+                                    <a href="">- NodeJS</a>
+                                    <a href="">- React</a>
                                 </div>
                             </div>
                             <div className="cat_1">
                                 <a href="">MOBILE</a>
                                 <div className="cat_2">
-                                    <a href="">- Android</a><br/>
-                                    <a href="">- React Native</a><br/>
+                                    <a href="">- Android</a>
+                                    <a href="">- React Native</a>
                                 </div>
                             </div>
                             <div className="cat_1">
@@ -38,15 +38,15 @@ class BlogList extends React.Component {
                             <div className="cat_1">
                                 <a href="">DEEP LEARNING</a>
                                 <div className="cat_2">
-                                    <a href="">- Image</a><br/>
-                                    <a href="">- NLP</a><br/>
+                                    <a href="">- Image</a>
+                                    <a href="">- NLP</a>
                                 </div>
                             </div>
                             <div className="cat_1">
                                 <a href="">ALGORITHMS</a>
                                 <div className="cat_2">
-                                    <a href="">- DP</a><br/>
-                                    <a href="">- Search</a><br/>
+                                    <a href="">- DP</a>
+                                    <a href="">- Search</a>
                                 </div>
                             </div>
                         </div>

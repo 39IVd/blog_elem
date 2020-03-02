@@ -2,41 +2,51 @@
 	// blog list 블로그 리스트 관련 css
 	// blog categories
 	.row {
-		content : "";
-		display: table;
-		clear : both;
+		// content : "";
+		// display: table;
+		// clear : both;
 		.categoryBar {
-			// width : 150px
-			// position: fixed
-			// z-index: 1
+			height: 100%;
+			width : 200px;
+			position: fixed;
+			// z-index: 1;
+			overflow-x: hidden;
+			// 위치
+			top : 150px;
+			left: 60px;
+			// padding-top: 100px;
 			// top: 200px
 			// left: 50px
-			height: 100%;
-			// overflow-x: hidden
-			float: left;
-			width : 17%;
-			// padding: 40px;
-			// background-color: #fcf9ae
+			// float: left;
+			// width : 17%;
 			.cat_1 {
 				margin-top: 10px;
 				a {
 					font-size: 18px;
 					font-weight: bold;
 					// font-family: Arial
-					// color: $black;
+					color: #6888DF;
+					display: block;
+					
 				}
 				.cat_2 {
 					font-size: 14px;
 					margin-left: 10px;
+				}
+				// scroll할 때 변화
+				:hover {
+					// color: #E6ACFF;
+					color: #C265A6;
 				}
 			}
 		
 		}
 		.posts {
 			// margin-left : 150px
-			float: left;
-			width : 70%;
+			// float: left;
+			// width : 70%;
 			height : wrap-content;
+			padding-left: 120px;
 			// padding: 50px;
 		}
 	}
