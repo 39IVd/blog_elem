@@ -1,9 +1,10 @@
 ---
-title: Something Hot
-date: 2019-06-29
+# title은 ""안에 있어야 인식함
+title: "[JavaScript] Syntax 정리"
+date: 2020-03-02
 template: blog
-image: ./image.jpg
-banner: ./banner.jpg
+image: ./javascript.jpg
+# banner: ./javascript.jpg
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
 

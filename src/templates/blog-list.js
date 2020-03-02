@@ -63,10 +63,13 @@ class BlogList extends React.Component {
 
                 </section>
             );
+
         } else {
             return <React.Fragment></React.Fragment>;
         }
+
     }
+
 }
 
 export default function ({data, pathContext}) {

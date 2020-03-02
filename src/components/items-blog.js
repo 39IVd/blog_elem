@@ -5,6 +5,7 @@ import Date from "./date";
 import { Calendar } from "./icons";
 import "../style/list-blog.less";
 
+// 블로그 각 item을 담은 js file
 class BlogItem extends React.Component {
     componentDidMount() {
         this.color = window
@@ -21,7 +22,7 @@ class BlogItem extends React.Component {
             <div className="item col s12 m4">
                 <div className="box">
                     <div className="image">
-                        <Img
+                        <Img className="blog_item_img"
                             fluid={
                                 this.props.data.node.frontmatter.image
                                     .childImageSharp.fluid
