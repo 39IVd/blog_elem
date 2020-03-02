@@ -5,10 +5,7 @@ import BlogItems from "../components/items-blog";
 import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
-// blog -> it 
-// contact -> music 
-// portfolio -> life 
-// blog 카테고리 내부 화면
+// blog -> it contact -> music portfolio -> life blog 카테고리 내부 화면
 class BlogList extends React.Component {
     render() {
         const query = this.props.datas;
@@ -16,7 +13,7 @@ class BlogList extends React.Component {
             return (
                 <section id="blog" className="container">
                     <div className="row">
-                    <div className="categoryBar">
+                        <div className="categoryBar">
                             <div className="cat_1">
                                 <a href="">WEB</a>
                                 <div className="cat_2">
