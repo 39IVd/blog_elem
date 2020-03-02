@@ -38,8 +38,8 @@ export default function(props) {
     `);
     if (query.allMarkdownRemark.edges.length > 0) {
         return (
-            <section id="latest-blogposts" className="container">
-                <div className="section-title">
+            <section id="latest-posts" className="container">
+                <div>
                     <h2>Latest Blogposts</h2>
                 </div>
                 <BlogItems data={query} remove={props.id} />
