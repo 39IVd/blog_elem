@@ -37,16 +37,16 @@ export default function() {
             }
         }
     `);
-    // if (query.allMarkdownRemark.edges.length > 0) {
-    //     return (
-    //         <section id="music" className="container">
-    //             <div className="section-title">
-    //                 <SectionTitle title="Recent Posts" />
-    //             </div>
-    //             <MusicItems data={query} />
-    //         </section>
-    //     );
-    // } else {
-    //     return <React.Fragment></React.Fragment>;
-    // }
+    if (query.allMarkdownRemark.edges.length > 0) {
+        return (
+            <section id="music" className="container">
+                {/* <div className="section-title">
+                    <SectionTitle title="Recent Posts" />
+                </div>
+                <MusicItems data={query} /> */}
+            </section>
+        );
+    } else {
+        return <React.Fragment></React.Fragment>;
+    }
 }
