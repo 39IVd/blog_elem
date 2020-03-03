@@ -1,12 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import Layout from "../components/layout";
-import LatestPosts from "../components/blogposts-latest";
 import SEO from "../components/seo";
 import Date from "../components/date";
-import "../style/blog-singlepage.less";
-// TODO singlepage 변경
+import { Row, Col } from "../components/page-components/grid";
+import MD from "gatsby-custom-md";
+import "../style/music-singlepage.less";
+
+const components = {
+    row: Row,
+    col: Col
+};
+
 export default function({ data }) {
     return (
         <Layout>
@@ -14,22 +19,10 @@ export default function({ data }) {
                 lang="en"
                 title={data.markdownRemark.frontmatter.title}
                 description={data.markdownRemark.frontmatter.description}
-                // image={data.markdownRemark.frontmatter.image.publicURL}
+                image={data.markdownRemark.frontmatter.image.publicURL}
             /> */}
             <div className="container">
                 <article className="music-post">
-                    {data.markdownRemark.frontmatter.banner != null 
-                    // && (
-                    //     <div className="banner">
-                    //         <Img
-                    //             fluid={
-                    //                 data.markdownRemark.frontmatter.banner
-                    //                     .childImageSharp.fluid
-                    //             }
-                    //         />
-                    //     </div>
-                    // )
-                    }
                     <div className="head text-primary">
                         <h1>{data.markdownRemark.frontmatter.title}</h1>
                         {/* <p className="post-date">
@@ -37,15 +30,14 @@ export default function({ data }) {
                         </p> */}
                     </div>
                     <div className="content row flex">
-                        <div
-                            className="col s12 m11 l10"
-                            dangerouslySetInnerHTML={{
-                                __html: data.markdownRemark.html
-                            }}
-                        ></div>
+                        <div className="col s12">
+                            <MD
+                                components={components}
+                                htmlAst={data.markdownRemark.htmlAst}
+                            />
+                        </div>
                     </div>
                 </article>
-                {/* <LatestPosts id={data.markdownRemark.id} /> */}
             </div>
         </Layout>
     );
@@ -55,30 +47,22 @@ export const query = graphql`
     query($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             html
+            htmlAst
             id
             frontmatter {
                 title
+                date
                 description
+                image {
+                    publicURL
+                    childImageSharp {
+                        fluid(maxWidth: 1000) {
+                            srcSet
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
         }
     }
 `;
-
-// image {
-//     publicURL
-//     childImageSharp {
-//         fluid(maxWidth: 1000) {
-//             srcSet
-//             ...GatsbyImageSharpFluid
-//         }
-//     }
-// }
-// banner {
-//     publicURL
-//     childImageSharp {
-//         fluid(maxHeight: 600, maxWidth: 1920) {
-//             srcSet
-//             ...GatsbyImageSharpFluid
-//         }
-//     }
-// }

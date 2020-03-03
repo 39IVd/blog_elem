@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import SocialLinks from "../components/sociallinks";
 import PortfolioList from "../components/list-portfolio";
 import BlogList from "../components/list-blog";
+import MusicList from "../components/list-music";
 import Contact from "../components/contact";
 import "../style/wall.less";
 
@@ -128,6 +129,7 @@ class IndexPage extends React.Component {
                 <BlogList />
                 {/* TODO : Tags 추가할것!! */}
                 {/* <Contact /> */}
+                <MusicList />
             </Layout>
         );
     }

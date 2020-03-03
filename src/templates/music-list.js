@@ -1,49 +1,43 @@
 import React from "react";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import MusicItems from "../components/items-music";
 import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
-// blog -> it contact -> music portfolio -> life blog 카테고리 내부 화면
+
 class MusicList extends React.Component {
     render() {
         const query = this.props.datas;
         if (query.allMarkdownRemark.edges.length > 0) {
             return (
                 <section id="music" className="container">
-                    <div className="row">
-                        <div className="posts">
-                            <div className="section-title">
-                                <SectionTitle title="Music"/>
-                            </div>
-                            <MusicItems data={query}/>
-                            <Pagination pathContext={this.props.pathContext} type="music"/>
-                        </div>
-
+                    <div className="section-title">
+                        <SectionTitle title="Music" />
                     </div>
-
+                    <MusicItems data={query} />
+                    {/* <Pagination
+                        pathContext={this.props.pathContext}
+                        type="music"
+                    /> */}
                 </section>
             );
-
         } else {
             return <React.Fragment></React.Fragment>;
         }
-
     }
-
 }
 
-export default function ({data, pathContext}) {
+export default function({ data, pathContext }) {
     return (
         <Layout>
-            <SEO lang="en" title="Music"/>
-            <MusicList datas={data} pathContext={pathContext}/>
+            {/* <SEO lang="en" title="Music" /> */}
+            <MusicList datas={data} pathContext={pathContext} />
         </Layout>
     );
 }
 
-export const query = graphql `
+export const query = graphql`
     query musicListPage($skip: Int!, $limit: Int!) {
         allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/music/" } }
@@ -57,6 +51,7 @@ export const query = graphql `
                     frontmatter {
                         title
                         description
+                        date
                         image {
                             publicURL
                             childImageSharp {

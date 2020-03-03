@@ -158,7 +158,7 @@ exports.createPages = ({ graphql, actions }) => {
             });
         });
 
-        result.data.blog.edges.forEach(({ node }) => {
+        result.data.music.edges.forEach(({ node }) => {
             let template =
                 node.frontmatter.template === undefined
                     ? "music"

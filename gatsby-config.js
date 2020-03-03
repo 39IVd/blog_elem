@@ -32,7 +32,7 @@ let siteMetadata = {
         },
         {
             name: "MUSIC",
-            url: "/contact"
+            url: "/music"
         }
     ],
     footerLinks: [
