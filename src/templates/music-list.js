@@ -1,7 +1,7 @@
 import React from "react";
 import {graphql} from "gatsby";
 import Layout from "../components/layout";
-import BlogItems from "../components/items-blog";
+import MusicItems from "../components/items-music";
 import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
@@ -11,14 +11,14 @@ class MusicList extends React.Component {
         const query = this.props.datas;
         if (query.allMarkdownRemark.edges.length > 0) {
             return (
-                <section id="blog" className="container">
+                <section id="music" className="container">
                     <div className="row">
                         <div className="posts">
                             <div className="section-title">
                                 <SectionTitle title="Music"/>
                             </div>
                             <MusicItems data={query}/>
-                            <Pagination pathContext={this.props.pathContext} type="blog"/>
+                            <Pagination pathContext={this.props.pathContext} type="music"/>
                         </div>
 
                     </div>
@@ -46,7 +46,7 @@ export default function ({data, pathContext}) {
 export const query = graphql `
     query musicListPage($skip: Int!, $limit: Int!) {
         allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/blog/" } }
+            filter: { fileAbsolutePath: { regex: "/music/" } }
             sort: { fields: [frontmatter___date], order: DESC }
             limit: $limit
             skip: $skip
@@ -57,7 +57,6 @@ export const query = graphql `
                     frontmatter {
                         title
                         description
-                        date
                         image {
                             publicURL
                             childImageSharp {

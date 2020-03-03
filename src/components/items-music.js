@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import Date from "./date";
-import { Calendar } from "./icons";
-import "../style/list-blog.less";
+import "../style/list-music.less";
 
 // Music 각 item을 담은 js file
 class MusicItem extends React.Component {
@@ -11,7 +9,6 @@ class MusicItem extends React.Component {
         this.color = window
             .getComputedStyle(this.textSecondary, null)
             .getPropertyValue("color");
-        const calendar = this.textSecondary.querySelector("path");
         calendar.setAttribute("fill", this.color);
     }
 

@@ -9,6 +9,7 @@ let siteMetadata = {
     author: `@paige`,
     blogItemsPerPage: 10,
     portfolioItemsPerPage: 10,
+    musicItemsPerPage : 10,
     darkmode: true,
     switchTheme: true,
     // 상단 navigation bar 이름 변경

@@ -32,6 +32,20 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
+            music: allMarkdownRemark(
+                filter: { fileAbsolutePath: { regex: "/music/" } }
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            template
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
             portfolio: allMarkdownRemark(
                 filter: { fileAbsolutePath: { regex: "/portfolio/" } }
             ) {
@@ -64,6 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
                 siteMetadata {
                     blogItemsPerPage
                     portfolioItemsPerPage
+                    musicItemsPerPage
                 }
             }
         }
@@ -82,6 +97,26 @@ exports.createPages = ({ graphql, actions }) => {
                     limit: blogPostsPerPage,
                     skip: i * blogPostsPerPage,
                     numPages: numBlogPages,
+                    currentPage: i + 1
+                }
+            });
+        });
+
+        const MusicItems = result.data.music.edges;
+        const MusicItemsPerPage =
+            result.data.limitPost.siteMetadata.musicItemsPerPage;
+        const numMusicItems = Math.ceil(
+            MusicItems.length / MusicItemsPerPage
+        );
+
+        Array.from({ length: numMusicItems }).forEach((_, i) => {
+            createPage({
+                path: i === 0 ? `/music` : `/music/${i + 1}`,
+                component: path.resolve("./src/templates/music-list.js"),
+                context: {
+                    limit: blogPostsPerPage,
+                    skip: i * blogPostsPerPage,
+                    numPages: numMusicItems,
                     currentPage: i + 1
                 }
             });
@@ -107,10 +142,26 @@ exports.createPages = ({ graphql, actions }) => {
             });
         });
 
+        
+
         result.data.blog.edges.forEach(({ node }) => {
             let template =
                 node.frontmatter.template === undefined
                     ? "blog"
+                    : node.frontmatter.template;
+            createPage({
+                path: node.fields.slug,
+                component: path.resolve("./src/templates/" + template + ".js"),
+                context: {
+                    slug: node.fields.slug
+                }
+            });
+        });
+
+        result.data.blog.edges.forEach(({ node }) => {
+            let template =
+                node.frontmatter.template === undefined
+                    ? "music"
                     : node.frontmatter.template;
             createPage({
                 path: node.fields.slug,
