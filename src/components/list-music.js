@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import MusicItems from "./items-music";
+import SectionTitle from "./sectiontitle";
 
 export default function() {
     const query = useStaticQuery(graphql`
@@ -16,6 +17,7 @@ export default function() {
                         frontmatter {
                             title
                             description
+                            date
                             image {
                                 publicURL
                                 childImageSharp {
@@ -35,10 +37,16 @@ export default function() {
             }
         }
     `);
-
-    return (
-        <section id="music" className="container">
-            <MusicItems data={query} />
-        </section>
-    );
+    // if (query.allMarkdownRemark.edges.length > 0) {
+    //     return (
+    //         <section id="music" className="container">
+    //             <div className="section-title">
+    //                 <SectionTitle title="Recent Posts" />
+    //             </div>
+    //             <MusicItems data={query} />
+    //         </section>
+    //     );
+    // } else {
+    //     return <React.Fragment></React.Fragment>;
+    // }
 }
