@@ -19,58 +19,24 @@ description:
 4. 남은 node의 개수 (res)-parent Set의 size = leaf node의 개수를 구한다.
 
 ### Java Code
-
-```java
-public class BJ_1068_Tree2 {
-    static Scanner in = new Scanner(System.in);
-    static int n;
-    static int[] parent = new int[50];
-    static Set<Integer> parentSet = new HashSet<>();
-    static int target;
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=desert"></script>
+<pre class="prettyprint lang-java">
+public class test {
     public static void main(String[] args) {
-        n = in.nextInt();
-        for(int i=0;i<n;i++) {
-            parent[i] = in.nextInt();
-        }
-        target = in.nextInt();
-//        제거되는 node의 parent = -2로 저장
-        parent[target] = -2;
-        int res = n;
-        for(int i=0;i<n;i++) {
-            if(Cut(i)) {
-//                같이 제거되는 node의 parent = -2로 저장
-                parent[i] = -2;
-                res--;
-            }
-        }
-//        for(int i=0;i<n;i++) {
-//            System.out.print(parent[i]+" ");
-//        }
-//        System.out.println();
-//        System.out.println("res : "+res);
-
-        for(int i=0;i<n;i++) {
-            if(parent[i]!=-2&&parent[i]!=-1) {
-//                제거되지 않은 남은 node & root가 아닌 node 중에서,
-//                그 node의 parent를 Set에 저장.
-                parentSet.add(parent[i]);
-            }
-        }
-        int leaf = res-parentSet.size();
-        System.out.println(leaf);
-
-    }
-    public static boolean Cut(int n) {
-//        node n의 조상 중, 제거되는 node가 있을 경우 Cut=true.
-        while (parent[n]!=-1) {
-            if(parent[n]==-2) {
-                return true;
-            }
-            n = parent[n];
-        }
-        return false;
+        
     }
 }
-```
+</pre>
+<pre><code>
+public class test {
+    public static void main(String[] args) {
+        
+    }
+}
+</code></pre>
+[git](https://gist.github.com/39IVd/b9c8209c35c8c47c20fa826508039b00.js)
+<script src="https://gist.github.com/39IVd/b9c8209c35c8c47c20fa826508039b00.js"></script>
+
 
 
