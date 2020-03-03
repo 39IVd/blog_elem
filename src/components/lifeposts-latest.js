@@ -1,11 +1,10 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import LifeItems from "./items-life";
-import SectionTitle from "./sectiontitle";
 
-export default function() {
+export default function(props) {
     const query = useStaticQuery(graphql`
-        query lifeList {
+        query latestLifeList {
             allMarkdownRemark(
                 filter: { fileAbsolutePath: { regex: "/life/" } }
                 limit: 6
@@ -39,11 +38,11 @@ export default function() {
     `);
     if (query.allMarkdownRemark.edges.length > 0) {
         return (
-            <section id="life" className="container">
-                <div className="section-title">
-                    <SectionTitle title="Recent Posts" />
+            <section id="latest-posts" className="container">
+                <div>
+                    <h2>Recent Posts</h2>
                 </div>
-                <LifeItems data={query} />
+                <LifeItems data={query} remove={props.id} />
             </section>
         );
     } else {
