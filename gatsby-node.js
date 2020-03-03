@@ -46,8 +46,8 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
-            portfolio: allMarkdownRemark(
-                filter: { fileAbsolutePath: { regex: "/portfolio/" } }
+            life: allMarkdownRemark(
+                filter: { fileAbsolutePath: { regex: "/life/" } }
             ) {
                 edges {
                     node {
@@ -77,7 +77,7 @@ exports.createPages = ({ graphql, actions }) => {
             limitPost: site {
                 siteMetadata {
                     blogItemsPerPage
-                    portfolioItemsPerPage
+                    lifeItemsPerPage
                     musicItemsPerPage
                 }
             }
@@ -122,21 +122,21 @@ exports.createPages = ({ graphql, actions }) => {
             });
         });
 
-        const PortfolioItems = result.data.portfolio.edges;
-        const PortfolioItemsPerPage =
-            result.data.limitPost.siteMetadata.portfolioItemsPerPage;
-        const numPortfolioItems = Math.ceil(
-            PortfolioItems.length / PortfolioItemsPerPage
+        const LifeItems = result.data.life.edges;
+        const LifeItemsPerPage =
+            result.data.limitPost.siteMetadata.lifeItemsPerPage;
+        const numLifeItems = Math.ceil(
+            LifeItems.length / LifeItemsPerPage
         );
 
-        Array.from({ length: numPortfolioItems }).forEach((_, i) => {
+        Array.from({ length: numLifeItems }).forEach((_, i) => {
             createPage({
-                path: i === 0 ? `/portfolio` : `/portfolio/${i + 1}`,
-                component: path.resolve("./src/templates/portfolio-list.js"),
+                path: i === 0 ? `/life` : `/life/${i + 1}`,
+                component: path.resolve("./src/templates/life-list.js"),
                 context: {
                     limit: blogPostsPerPage,
                     skip: i * blogPostsPerPage,
-                    numPages: numPortfolioItems,
+                    numPages: numLifeItems,
                     currentPage: i + 1
                 }
             });
@@ -172,10 +172,10 @@ exports.createPages = ({ graphql, actions }) => {
             });
         });
 
-        result.data.portfolio.edges.forEach(({ node }) => {
+        result.data.life.edges.forEach(({ node }) => {
             let template =
                 node.frontmatter.template === undefined
-                    ? "portfolio"
+                    ? "life"
                     : node.frontmatter.template;
             createPage({
                 path: node.fields.slug,

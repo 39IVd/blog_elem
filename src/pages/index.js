@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import SocialLinks from "../components/sociallinks";
-import PortfolioList from "../components/list-portfolio";
+import LifeList from "../components/list-life";
 import BlogList from "../components/list-blog";
 import MusicList from "../components/list-music";
 import Contact from "../components/contact";

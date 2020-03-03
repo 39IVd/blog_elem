@@ -8,7 +8,7 @@ let siteMetadata = {
     description: `This is Paige Log :)`,
     author: `@paige`,
     blogItemsPerPage: 10,
-    portfolioItemsPerPage: 10,
+    lifeItemsPerPage: 10,
     musicItemsPerPage : 10,
     darkmode: true,
     switchTheme: true,
@@ -28,7 +28,7 @@ let siteMetadata = {
         },
         {
             name: "LIFE",
-            url: "/portfolio"
+            url: "/life"
         },
         {
             name: "MUSIC",
