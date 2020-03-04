@@ -6,8 +6,13 @@ import LatestPosts from "../components/blogposts-latest";
 import SEO from "../components/seo";
 import Date from "../components/date";
 import "../style/blog-singlepage.less";
-
+import { Disqus } from "gatsby-plugin-disqus"
 export default function({ data }) {
+    const disqusConfig = {
+        url: `${"https://paigelee.netlify.com" + data.markdownRemark.fields.slug}`,
+        identifier: data.markdownRemark.id,
+        title: data.markdownRemark.frontmatter.title,
+      }
     return (
         <Layout>
             <SEO
@@ -44,6 +49,8 @@ export default function({ data }) {
                             }}
                         ></div>
                     </div>
+                    <Disqus config={disqusConfig} />
+
                 </article>
                 <LatestPosts id={data.markdownRemark.id} />
             </div>
@@ -60,8 +67,10 @@ export const query = graphql`
                 title
                 date
                 description
-                
             }
+            fields {
+                slug
+              }
         }
     }
 `;

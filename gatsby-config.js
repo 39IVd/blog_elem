@@ -110,6 +110,12 @@ module.exports = {
             options: {
                 strictMath: true
             }
-        }
+        },
+        {
+            resolve: `gatsby-plugin-disqus`,
+            options: {
+              shortname: `paigelog`,
+            },
+          },
     ]
 };
