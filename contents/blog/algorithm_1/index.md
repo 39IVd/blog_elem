@@ -14,13 +14,13 @@ description:
    -  parent[node]=-2로 표시.
    -  각 node의 모든 조상 중, 제거된 node가 하나라도 있을 경우 parent[node]=-2로 표시한다.
 
-2. 남은 node의 개수를 res에 저장. > parent[]=-2인 node의 개수를 구함.
+2. 남은 node의 개수를 res에 저장. 
+   -  parent[]=-2인 node의 개수를 구함.
+
 3. 남은 node들의 parent를 Set에 저장한다.
 4. 남은 node의 개수 (res)-parent Set의 size = leaf node의 개수를 구한다.
 
 ### Java Code
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&lang=sql&skin=desert"></script>
 
 ```java 
 import java.util.HashSet;
