@@ -46,7 +46,7 @@ class MusicItem extends React.Component {
                             {this.props.data.node.frontmatter.description}
                         </p>
                         <p
-                            className="date text-secondary"
+                            className="date text-secondary" id="released"
                             ref={c => (this.textSecondary = c)}
                         >
                             

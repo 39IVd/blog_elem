@@ -1,18 +1,9 @@
 #music{
 	.row {
-		// content : "";
-		// display: table;
-		// clear : both;
-		
 		.posts {
-			// margin-left : 150px
-			// float: left;
-			// width : 70%;
 			height : wrap-content;
-			// padding: 50px;
 		}
 	}
-	// 블로그 리스트 각 item의 style
 	.item{
 		padding: 10px;
 		margin-bottom: 13px;
@@ -22,8 +13,6 @@
 			.image{
 				position: relative;
 				height: 240px;
-				// line-height: 200px;
-				vertical-align: middle;
 				background-color: #FAFAFA;
 				margin-bottom: 5px;
 			}
@@ -60,13 +49,6 @@
 @media only screen and (max-width: 800px){
 	#music {
 		padding: 10px;
-		.content{
-			padding: 20px 10px;
-
-			h3{
-				font-size: 20px;
-			}
-		}
 		.row {
 			.categoryBar {
 				display: none;
@@ -80,26 +62,32 @@
 				height : wrap-content;
 				left: 0;
 				padding-left: 0;
-				width: 100%;
+				// width: 100%;
 			}
 		}
 		.item{
 			// padding: 10px;
-			margin-bottom: 10px;
+			// margin-bottom: 10px;
 			.box{
 				position: relative;
-				width: 35%; height: auto;
+				width: 150px; height: 250px;
 				.image{
 					position: relative;
-					height: 100px;
+					height: 150px;
 					// line-height: 200px;
 					// vertical-align: middle;
 					background-color: #FAFAFA;
-					margin-bottom: 10px;
+					margin-bottom: 5px;
 				}
 				// image 하단 내용
 				.content{	
-					padding: 20px 10px;
+					// padding: 20px 10px;
+					h3{
+						font-size: 20px;
+					}
+					#released {
+						font-size: 15px;
+					}
 				}
 			}
 		}
