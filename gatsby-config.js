@@ -80,7 +80,10 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-feed`,
-        `gatsby-plugin-sitemap`, {
+        `gatsby-plugin-sitemap`,
+        `gatsby-transformer-remark`,
+        `gatsby-plugin-emotion`,
+         {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
