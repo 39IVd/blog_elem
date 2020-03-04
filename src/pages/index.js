@@ -71,7 +71,6 @@ class IndexPage extends React.Component {
     render() {
         return (
             <Layout placeholder={false}>
-                <meta name="google-site-verification" content="qBUF7N6eMPfxhLceVXFVWhdmPXdfb4KkSPtQCp59QN4" />
                 <SEO
                     lang="en"
                     title={this.props.data.site.siteMetadata.title}

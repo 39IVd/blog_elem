@@ -15,6 +15,7 @@ function Header() {
     `);
     return (
         <Helmet>
+            <meta name="google-site-verification" content="qBUF7N6eMPfxhLceVXFVWhdmPXdfb4KkSPtQCp59QN4" />
             <link
                 rel="icon"
                 href={query.site.siteMetadata.icon}
