@@ -7,6 +7,8 @@ import SEO from "../components/seo";
 import Date from "../components/date";
 import "../style/blog-singlepage.less";
 import { Disqus } from "gatsby-plugin-disqus"
+
+// blog singlepage 템플릿
 export default function({ data }) {
     const disqusConfig = {
         url: `${"https://paigelee.netlify.com" + data.markdownRemark.fields.slug}`,

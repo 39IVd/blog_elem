@@ -5,6 +5,7 @@ import BlogItems from "../components/items-blog";
 import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
+import "../style/list-blog.less";
 // blog -> it contact -> music  -> life blog 카테고리 내부 화면
 class BlogList extends React.Component {
     render() {
