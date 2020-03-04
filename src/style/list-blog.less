@@ -129,12 +129,36 @@
                 left: 0;
             }
             .posts {
+				width: 100%;
                 height: wrap-content;
                 left: 0;
                 padding-left: 0;
                 width: 100%;
             }
-        }
+		}
+		.item {
+			// width, padding %로 변경하면 밀릴 때 아이템 겹치는 문제 없어짐
+			padding: 1%;
+			width: 100%;
+			.box {
+				border: 1px solid #9D9D9D;
+				position: relative;
+				width: 350px;
+				height: 350px;
+				.image {
+					position: relative;
+					height: 200px;
+					// vertical-align: middle;
+					background-color: #FAFAFA;
+		
+				}
+				// image 하단 내용
+				.content {
+					padding: 20px 10px;
+
+				}
+			}
+		}
     }
 
 }
