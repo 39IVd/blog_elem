@@ -4,6 +4,7 @@ const path = require(`path`);
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
     if (node.internal.type === `MarkdownRemark`) {
+        console.log(createFilePath({ node, getNode, basePath: `basepages` }));
         const slug = createFilePath({ node, getNode, basePath: `basepages` });
         createNodeField({
             node,
