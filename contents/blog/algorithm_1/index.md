@@ -5,11 +5,10 @@ template: blog
 image: ../images/algorithm.jpg
 description: 
 ---
-## Tree에서 한 node를 제거했을 때, 남은 leaf node의 개수를 구하는 프로그램.
 
+## Tree에서 한 node를 제거했을 때, 남은 leaf node의 개수를 구하는 프로그램.
 ![image](./img1.png)
 ![image](./img2.png)
-
 1. node 1개 제거 후, 같이 제거되는 모든 node를 표시한다.
    -  parent[node]=-2로 표시.
    -  각 node의 모든 조상 중, 제거된 node가 하나라도 있을 경우 parent[node]=-2로 표시한다.
@@ -18,9 +17,10 @@ description:
    -  parent[]=-2인 node의 개수를 구함.
 
 3. 남은 node들의 parent를 Set에 저장한다.
-4. 남은 node의 개수 (res)-parent Set의 size = leaf node의 개수를 구한다.
 
-### Java Code
+4. 남은 node의 개수 (res)-parent Set의 size = leaf node의 개수를 구한다.
+<br><br>
+## Java Code
 
 ```java 
 import java.util.HashSet;
