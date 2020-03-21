@@ -4,8 +4,10 @@ date: 2020-03-02
 template: blog
 image: ../images/html.jpg
 description: 
-# category : /1_web/1_1_html_css/
-# tags: ["tag", "should", "be", "array"]
+categories:
+    - web
+    - html
+tags: ["tag", "should", "be", "array"]
 ---
 
 

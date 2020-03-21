@@ -71,9 +71,24 @@ class BlogItem extends React.Component {
 export default function(props) {
     const data = props.data.allMarkdownRemark.edges;
     let items = [];
+    const category = props.str
+    // alert(category)
     data.forEach(function(e, i) {
         if (props.remove && e.node.id === props.remove) return;
-        items.push(<BlogItem key={e.node.id} data={e} />);
+        // alert(e.node.frontmatter.categories);
+        // if(e.node.frontmatter.categories.includes(category)) {
+        //     items.push(<BlogItem key={e.node.id} data={e} />);
+        // }
+        // if(category in e.node.frontmatter.categories) {
+
+        // }
+        // alert(e.node.frontmatter.categories)
+        var cat = e.node.frontmatter.categories+"";
+        if(cat.includes(category)) {
+            // alert(cat);
+            items.push(<BlogItem key={e.node.id} data={e} />);
+        }
+        // items.push(<BlogItem key={e.node.id} data={e} />);
     });
     return <div className="row">{items}</div>;
 }

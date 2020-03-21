@@ -35,7 +35,7 @@ class Navbar extends React.Component {
             <React.Fragment>
                 <Sidebar
                     sidebar={<SidebarContents />}
-                    open={this.state.sidebarOpen}
+                    // open={this.state.sidebarOpen}
                     onSetOpen={this.onSetSidebarOpen}
                     sidebarClassName="sidebar-content"
                     styles={{

@@ -7,8 +7,8 @@ image: ../images/javascript.jpg
 # banner: ./javascript.jpg
 description:
 categories:
-    - Web
-    - JavaScript
+    - web
+    - javascript
 ---
 
 ![image](./image.jpg)

@@ -4,6 +4,9 @@ date: 2020-03-02
 template: blog
 image: ../images/react.jpg
 description: how to use react.js?
+categories:
+    - web
+    - react
 ---
 
 
