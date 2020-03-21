@@ -16,6 +16,9 @@ class BlogItem extends React.Component {
     }
 
     render() {
+        var cats = this.props.data.node.frontmatter.categories+"";
+        
+        cats = cats.replace(',', ' > ');
         return (
             // blog list 블로그 리스트 grid 조절 
             // grid col sm 방식.
@@ -49,6 +52,9 @@ class BlogItem extends React.Component {
                         </h3>
                         <p className="text-tertiary">
                             {this.props.data.node.frontmatter.description}
+                        </p>
+                        <p className="text-tags">
+                            {cats}
                         </p>
                         <p
                             className="date text-secondary"
@@ -84,11 +90,14 @@ export default function(props) {
         // }
         // alert(e.node.frontmatter.categories)
         var cat = e.node.frontmatter.categories+"";
-        if(cat.includes(category)) {
-            // alert(cat);
+        if(category=="all") {
             items.push(<BlogItem key={e.node.id} data={e} />);
         }
-        // items.push(<BlogItem key={e.node.id} data={e} />);
+        else {
+            if(cat.includes(category)) {
+                items.push(<BlogItem key={e.node.id} data={e} />);
+            }
+        }
     });
     return <div className="row">{items}</div>;
 }

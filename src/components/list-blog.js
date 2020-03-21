@@ -18,6 +18,7 @@ export default function() {
                             title
                             description
                             date
+                            categories
                             image {
                                 publicURL
                                 childImageSharp {
@@ -44,7 +45,7 @@ export default function() {
                 <div className="section-title">
                     <SectionTitle title="Recent Posts" />
                 </div>
-                <BlogItems data={query} />
+                <BlogItems data={query} str="all"/>
             </section>
         );
     } else {

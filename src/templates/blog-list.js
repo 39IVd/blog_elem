@@ -27,6 +27,10 @@ class BlogList extends React.Component {
                     <Categories />
                     <div className="row">
                         <div className="categoryBar">
+                        <div className="cat_1">
+                                <Link to="./blog" onClick={() => this.handleClick("all")}>ALL</Link>
+                                
+                            </div>
                             <div className="cat_1">
                                 <Link to="./blog" onClick={() => this.handleClick("algorithm")}>ALGORITHM</Link>
                                 {/* <div className="cat_2">
