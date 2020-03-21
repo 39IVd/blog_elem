@@ -26,6 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
                     node {
                         frontmatter {
                             template
+                            categories
                         }
                         fields {
                             slug

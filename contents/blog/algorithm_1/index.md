@@ -4,6 +4,8 @@ date: 2020-03-03
 template: blog
 image: ../images/algorithm.jpg
 description: 
+categories : 
+    - algorithm
 ---
 
 ## Tree에서 한 node를 제거했을 때, 남은 leaf node의 개수를 구하는 프로그램.

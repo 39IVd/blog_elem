@@ -6,6 +6,9 @@ template: blog
 image: ../images/javascript.jpg
 # banner: ./javascript.jpg
 description:
+categories:
+    - Web
+    - JavaScript
 ---
 
 ![image](./image.jpg)

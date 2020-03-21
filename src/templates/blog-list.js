@@ -1,21 +1,23 @@
 import React from "react";
-import {graphql} from "gatsby";
+import {graphql, Link} from "gatsby";
 import Layout from "../components/layout";
 import BlogItems from "../components/items-blog";
 import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
+// import Categories from '../components/Categories'
 import "../style/list-blog.less";
 // blog -> it contact -> music  -> life blog 카테고리 내부 화면
 class BlogList extends React.Component {
     render() {
-        const query = this.props.datas;
+        const query = this.props.datas; 
         if (query.allMarkdownRemark.edges.length > 0) {
             return (
                 <section id="blog" className="container">
+                    {/* <Categories /> */}
                     <div className="row">
                         <div className="categoryBar">
-                            <div className="cat_1">
+                            <div className="cat_1"> 
                                 <a href="">WEB</a>
                                 <div className="cat_2">
                                     <a href="">- JavaScript</a>
@@ -94,6 +96,7 @@ export const query = graphql `
                         title
                         description
                         date
+                        categories
                         image {
                             publicURL
                             childImageSharp {
