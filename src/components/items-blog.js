@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import Date from "./date";
 import { Calendar } from "./icons";
 import "../style/list-blog.less";
-
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 // 블로그 각 item을 담은 js file
 class BlogItem extends React.Component {
     componentDidMount() {
@@ -19,10 +19,15 @@ class BlogItem extends React.Component {
         var cats = this.props.data.node.frontmatter.categories+"";
         
         cats = cats.replace(',', ' > ');
+        let disqusConfig = {
+            url: `${"https://paigelee.netlify.com" + this.props.data.node.fields.slug}`,
+            identifier: this.props.data.node.id,
+            title: this.props.data.node.frontmatter.title,
+          }
         return (
             // blog list 블로그 리스트 grid 조절 
             // grid col sm 방식.
-            <div className="item col s12 m4">
+            <div className="item col s12 m1">
                 <div className="box">
                     <div className="image">
                         <Img className="blog_item_img"
@@ -56,6 +61,9 @@ class BlogItem extends React.Component {
                         <p className="text-tags">
                             {cats}
                         </p>
+                        <p className="min-read">
+                        {this.props.data.node.timeToRead} min read
+                        </p>
                         <p
                             className="date text-secondary"
                             ref={c => (this.textSecondary = c)}
@@ -66,7 +74,9 @@ class BlogItem extends React.Component {
                             <Date
                                 data={this.props.data.node.frontmatter.date}
                             />
+                            <CommentCount className="commentCount" config={disqusConfig} placeholder={'...'} />
                         </p>
+                        <p className="excerpt">{this.props.data.node.excerpt} </p>
                     </div>
                 </div>
             </div>
