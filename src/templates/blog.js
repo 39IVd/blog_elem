@@ -7,7 +7,6 @@ import SEO from "../components/seo";
 import Date from "../components/date";
 import "../style/blog-singlepage.less";
 import { Disqus } from "gatsby-plugin-disqus"
-import { Calendar } from "/Users/paige/Documents/elementlog/src/components/icons.js";
 
 // blog singlepage 템플릿
 export default function({ data }) {
