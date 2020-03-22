@@ -44,12 +44,12 @@ export default function ({data, pathContext}) {
 }
 
 export const query = graphql `
-    query musicListPage($skip: Int!, $limit: Int!) {
+    query musicListPage {
         allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/music/" } }
             sort: { fields: [frontmatter___date], order: DESC }
-            limit: $limit
-            skip: $skip
+            limit: 24
+            skip: 0
         ) {
             edges {
                 node {

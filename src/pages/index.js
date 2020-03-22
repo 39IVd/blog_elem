@@ -129,7 +129,7 @@ class IndexPage extends React.Component {
                 <BlogList />
                 {/* TODO : Tags 추가할것!! */}
                 {/* <Contact /> */}
-                <MusicList />
+                {/* <MusicList /> */}
             </Layout>
         );
     }
