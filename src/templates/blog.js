@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 import Date from "../components/date";
 import "../style/blog-singlepage.less";
 import { Disqus } from "gatsby-plugin-disqus"
+import { Calendar } from "/Users/paige/Documents/elementlog/src/components/icons.js";
 
 // blog singlepage 템플릿
 export default function({ data }) {
@@ -40,6 +41,9 @@ export default function({ data }) {
                     <div className="head text-primary">
                         <h1>{data.markdownRemark.frontmatter.title}</h1>
                         <p className="post-date">
+                            {/* <span className="icon">
+                                <Calendar />
+                            </span> */}
                             <Date data={data.markdownRemark.frontmatter.date} />
                         </p>
                     </div>

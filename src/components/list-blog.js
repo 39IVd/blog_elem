@@ -7,7 +7,7 @@ export default function() {
     const query = useStaticQuery(graphql`
         query blogList {
             allMarkdownRemark(
-                filter: { fileAbsolutePath: { regex: "/blog/" } }
+                filter: {frontmatter: {template: {eq: "blog"}}}
                 limit: 6
                 sort: { fields: [frontmatter___date], order: DESC }
             ) {

@@ -1,5 +1,5 @@
 // @content_font : 'Tahoma';
-@content_font : 'Arial';
+@content_font :"굴림", Gulim,MS Courier New, Prestige, Everson Mono;
 @fontBold: 'Work Sans', sans-serif;
 .blog-post{
 	padding: 30px 0;
@@ -16,6 +16,15 @@
 		h1{
 			margin: 15px 0;
 			font-family: @content_font;
+		}
+	}
+	.post-date {
+		// display: flex;
+		// align-items: center;
+		font-size: 17px;
+
+		.icon {
+			// margin-right: 10px;
 		}
 	}
 	
@@ -41,7 +50,7 @@
 		.gatsby-resp-image-wrapper{
 			margin-left: 0 !important;
 		}
-
+		
 		img{
 			max-width: 100%;
 		}
