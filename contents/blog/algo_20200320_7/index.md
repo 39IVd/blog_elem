@@ -11,8 +11,9 @@ categories :
 ![image](./img1.png)
 
 ## Union-Find & Hashing 문제
-    노드가 추가될 때마다, 추가된 노드가 포함된 Tree의 크기를 구하라.
-    * 이름(String):index(Integer)로 해싱하여 map에 추가한다.
+> 노드가 추가될 때마다, 추가된 노드가 포함된 Tree의 크기를 구하라.
+> 
+> 이름(String):index(Integer)로 해싱하여 map에 추가한다.
 
 ### Algorithm :
 1. 두 이름 A, B를 입력받고, map에 포함되지 않은 이름이면(새로운 노드이면),

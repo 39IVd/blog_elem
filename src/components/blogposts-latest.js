@@ -17,6 +17,7 @@ export default function(props) {
                             title
                             description
                             date
+                            categories
                             image {
                                 publicURL
                                 childImageSharp {
@@ -42,7 +43,7 @@ export default function(props) {
                 <div>
                     <h2>Recent Posts</h2>
                 </div>
-                <BlogItems data={query} remove={props.id} />
+                <BlogItems data={query}  str="all" remove={props.id} />
             </section>
         );
     } else {

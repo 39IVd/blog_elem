@@ -7,7 +7,7 @@ description:
 categories : 
     - algorithm
 ---
-![image](./img1.png)
+![image](./img1.jpg)
 
 ## 문제 정의 : Directed Graph에서, 모든 노드에 대해 X에 방문했다가 다시 돌아오는 경로의 최소 비용을 구하라.
 

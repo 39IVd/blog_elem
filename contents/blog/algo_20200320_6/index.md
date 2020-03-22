@@ -12,7 +12,7 @@ categories :
 ![image](./img1.png)
 
 ## Undirected Graph에서 Minimum Spanning Tree (MST) 구하기.
-    => Kruskal Algorithm을 사용.
+> Kruskal Algorithm을 사용.
 
 ### Kruskal Algorithm :
 1. 모든 edge와 가중치를 Priority Queue에 저장한다. (가중치가 작은 순으로 정렬)
