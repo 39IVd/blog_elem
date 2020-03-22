@@ -29,7 +29,9 @@ class BlogItem extends React.Component {
             // grid col sm 방식.
             <div className="item col s12 m1">
                 <div className="box">
+                        
                     <div className="image">
+                       
                         <Img className="blog_item_img"
                             fluid={
                                 this.props.data.node.frontmatter.image
@@ -45,7 +47,12 @@ class BlogItem extends React.Component {
                         >
                             {this.props.data.node.frontmatter.title}
                         </Link>
+                        
                     </div>
+                    <Link
+                            to={this.props.data.node.fields.slug}
+                            title={this.props.data.node.frontmatter.title}
+                            className="overlay-link"> 
                     <div className="content">
                         <h3 className="text-primary">
                             <Link
@@ -78,6 +85,8 @@ class BlogItem extends React.Component {
                         </p>
                         <p className="excerpt">{this.props.data.node.excerpt} </p>
                     </div>
+                </Link>           
+
                 </div>
             </div>
         );
