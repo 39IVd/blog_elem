@@ -16,7 +16,6 @@ export default function() {
                         id
                         frontmatter {
                             title
-                            description
                             date
                             categories
                             image {
@@ -33,6 +32,8 @@ export default function() {
                         fields {
                             slug
                         }
+                        timeToRead
+                        excerpt
                     }
                 }
             }
