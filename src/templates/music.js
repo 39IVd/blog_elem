@@ -31,9 +31,9 @@ export default function({ data }) {
                     }
                     <div className="head text-primary">
                         <h1>{data.markdownRemark.frontmatter.title}</h1>
-                        <p className="post-date">
+                        {/* <p className="post-date">
                             <Date data={data.markdownRemark.frontmatter.date} />
-                        </p>
+                        </p> */}
                     </div>
                     <div className="content row flex">
                         <div
@@ -56,8 +56,8 @@ export const query = graphql`
             id
             frontmatter {
                 title
-                date
-                description
+                artist
+                genre
                 
             }
         }

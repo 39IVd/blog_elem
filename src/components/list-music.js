@@ -16,8 +16,8 @@ export default function() {
                         id
                         frontmatter {
                             title
-                            description
-                            date
+                            artist
+                            genre
                             image {
                                 publicURL
                                 childImageSharp {

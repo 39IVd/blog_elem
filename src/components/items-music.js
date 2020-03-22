@@ -6,16 +6,19 @@ import { Calendar } from "./icons";
 import "../style/list-music.less";
 
 class MusicItem extends React.Component {
-    componentDidMount() {
-        this.color = window
-            .getComputedStyle(this.textSecondary, null)
-            .getPropertyValue("color");
-    }
+    // componentDidMount() {
+    //     this.color = window
+    //         .getComputedStyle(this.textSecondary, null)
+    //         .getPropertyValue("color");
+    // }
 
     render() {
         return (
-            <div className="item col s12 m3">
+            <div className="item col s12 m2">
                 <div className="box">
+                        <p className="genre">
+                            {this.props.data.node.frontmatter.genre}
+                        </p>
                     <div className="image">
                         <Img className="music_item_img"
                             fluid={
@@ -23,7 +26,7 @@ class MusicItem extends React.Component {
                                     .childImageSharp.fluid
                             }
                         />
-                        <Link
+                        {/* <Link
                             to={this.props.data.node.fields.slug}
                             title={this.props.data.node.frontmatter.title}
                             aria-label={this.props.data.node.frontmatter.title}
@@ -31,29 +34,25 @@ class MusicItem extends React.Component {
                             style={{ opacity: 0 }}
                         >
                             {this.props.data.node.frontmatter.title}
-                        </Link>
+                        </Link> */}
+                        
                     </div>
                     <div className="content">
                         <h3 className="text-primary">
-                            <Link
+                            {/* <Link
                                 to={this.props.data.node.fields.slug}
                                 title={this.props.data.node.frontmatter.title}
                             >
                                 {this.props.data.node.frontmatter.title}
-                            </Link>
+                            </Link> */}
+                            {this.props.data.node.frontmatter.title}
                         </h3>
                         <p className="text-tertiary">
-                            {this.props.data.node.frontmatter.description}
+                            {this.props.data.node.frontmatter.artist}
                         </p>
-                        <p
-                            className="date text-secondary" id="released"
-                            ref={c => (this.textSecondary = c)}
-                        >
-                            
-                            Released :&emsp;<Date
-                                data={this.props.data.node.frontmatter.date}
-                            />
-                        </p>
+                        {/* <p className="genre">
+                            {this.props.data.node.frontmatter.genre}
+                        </p> */}
                     </div>
                 </div>
             </div>
