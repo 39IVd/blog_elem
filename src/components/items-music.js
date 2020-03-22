@@ -14,7 +14,7 @@ class MusicItem extends React.Component {
 
     render() {
         return (
-            <div className="item col s12 m2">
+            <div className="item col x12 s2">
                 <div className="box">
                         <p className="genre">
                             {this.props.data.node.frontmatter.genre}
