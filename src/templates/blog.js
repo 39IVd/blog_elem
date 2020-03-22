@@ -57,7 +57,7 @@ export default function({ data }) {
                     <Disqus config={disqusConfig} />
 
                 </article>
-                <LatestPosts id={data.markdownRemark.id} />
+                {/* <LatestPosts id={data.markdownRemark.id} /> */}
             </div>
         </Layout>
     );
