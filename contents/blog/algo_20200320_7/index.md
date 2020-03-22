@@ -1,0 +1,99 @@
+---
+title: "[Algorithm] 백준 4195 : 친구 네트워크 "
+date: 2020-03-20
+template: blog
+image: ../images/algorithm.jpg
+description: 
+categories : 
+    - algorithm
+---
+
+![image](./img1.png)
+
+## Union-Find & Hashing 문제
+    노드가 추가될 때마다, 추가된 노드가 포함된 Tree의 크기를 구하라.
+    * 이름(String):index(Integer)로 해싱하여 map에 추가한다.
+
+### Algorithm :
+1. 두 이름 A, B를 입력받고, map에 포함되지 않은 이름이면(새로운 노드이면),
+    - 현재 index로 parent와 groutCnt 배열을 초기화한다.
+    - map에 이름과 index를 해싱하여 추가한다.
+2. index로 변환된 A와 B를 합친다. (union)
+    - 노드 A와 B 각각의 root를 찾는다. (find)
+    - root가 같으면, (같은 tree 안에 있으면) 현재 tree의 크기를 반환한다.
+    - root가 다르면, b의 root의 부모노드를 a의 root로 저장한 후 각 groupCnt배열에 두 tree의 크기의 합을 저장한다.
+    - 합친 tree의 크기를 반환한다.
+   
+
+<br><br>
+## Java Code
+
+```java 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+    static Scanner in = new Scanner(System.in);
+    static int t, f;
+    static Map<String, Integer> map;
+    static int[] groupCnt, parent;
+    static StringBuilder sb = new StringBuilder();
+    public static void main(String[] args) {
+        t = in.nextInt();
+        while(t-- >0) {
+            f = in.nextInt();
+            map = new HashMap<>();
+            groupCnt = new int[f*2];
+            parent = new int[f*2];
+//            노드는 2개씩 주어지므로 전부 다른 노드일 경우 최대 f*2개이다.
+            int idx = 0;
+            while (f-- >0){
+                String a = in.next(); String b = in.next();
+                if(map.get(a)==null) {
+                    parent[idx] = idx;
+                    groupCnt[idx] = 1;
+                    map.put(a, idx++);
+                }
+                if (map.get(b)==null) {
+                    parent[idx] = idx;
+                    groupCnt[idx] = 1;
+                    map.put(b, idx++);
+                }
+                union(map.get(a), map.get(b));
+            }
+        }
+        System.out.println(sb.toString());
+    }
+    public static void union(int a, int b) {
+        int aRoot = find(a), bRoot = find(b);
+        int sum;
+        if(aRoot==bRoot) {
+            sum = groupCnt[aRoot];
+        }
+        else {
+            parent[bRoot] = aRoot;
+            sum = groupCnt[aRoot]+groupCnt[bRoot];
+            groupCnt[aRoot] = sum;
+            groupCnt[bRoot] = sum;
+        }
+        sb.append(sum+"\n");
+
+    }
+    public static int find(int node) {
+        if(node==parent[node]) {
+            return node;
+        }
+        else return parent[node] = find(parent[node]);
+    }
+
+}
+
+
+```
+
+
+
+
+
+

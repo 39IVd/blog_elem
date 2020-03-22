@@ -1,0 +1,103 @@
+---
+title: "[Algorithm] 백준 6497 : 전력난 "
+date: 2020-03-20
+template: blog
+image: ../images/algorithm.jpg
+description: 
+categories : 
+    - algorithm
+---
+
+
+![image](./img1.png)
+
+## Undirected Graph에서 Minimum Spanning Tree (MST) 구하기.
+    => Kruskal Algorithm을 사용.
+
+### Kruskal Algorithm :
+1. 모든 edge와 가중치를 Priority Queue에 저장한다. (가중치가 작은 순으로 정렬)
+2. 모든 노드의 부모 노드 (parent[])를 자기 자신으로 초기화한다.
+3. 전체 노드가 N개일 때 while 문을 N-1번 반복하면서, (MST는 Tree이고, Tree의 edge개수는 N-1이므로)
+    - PQ에서 가장 가중치가 작은 edge를 꺼낸다.
+    - 꺼낸 edge의 각 노드(a, b)의 root가 서로 다르면, (같은 tree에 속해 있지 않으면==cycle이 생기지 않으면)
+        * 한 노드의 root의 parent를 다른 노드의 root로 저장한다. (parent[bRoot]=aRoot)
+        * 총 가중치를 갱신한다.   
+
+<br><br>
+## Java Code
+
+```java 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+class Edge_PS {
+    int a, b;
+    int w;
+    Edge_PS(int a, int b, int w) {
+        this.a = a; this.b = b; this.w = w;
+    }
+}
+
+public class Main {
+    static Scanner in = new Scanner(System.in);
+    static int n, m;
+    static StringBuilder sb = new StringBuilder();
+    static int[] parent, visited;
+    static PriorityQueue<Edge_PS> pq = new PriorityQueue<>(new Comparator<Edge_PS>() {
+        @Override
+        public int compare(Edge_PS o1, Edge_PS o2) {
+            return o1.w-o2.w;
+        }
+    });
+    public static void main(String[] args) {
+        while (true) {
+            n = in.nextInt(); m = in.nextInt();
+            if(n==0&& m==0) break;
+            long total = 0, minimum = 0;
+//            여러 개의 테스트케이스를 받아야 하므로 필요한 배열, Queue를 반드시 초기화해야 한다.
+            visited = new int[n];
+            parent = new int[n];
+            pq.clear();
+            while (m-- >0){
+                int a = in.nextInt(); int b = in.nextInt(); int w = in.nextInt();
+                pq.add(new Edge_PS(a, b, w));
+                parent[a] = a; parent[b] = b;
+                total+=w;
+            }
+            int cnt = 0;
+            while (cnt<n-1) {
+                Edge_PS curr = pq.poll();
+                if(union(curr.a, curr.b)) {
+                    minimum += curr.w;
+                    cnt++;
+                }
+            }
+            sb.append((total-minimum)+"\n");
+        }
+        System.out.println(sb.toString());
+    }
+    public static boolean union(int a, int b) {
+        int aRoot = findRoot(a), bRoot = findRoot(b);
+        if(aRoot==bRoot) return false;
+        else {
+            parent[bRoot] = aRoot;
+            return true;
+        }
+    }
+    public static int findRoot(int a) {
+        if(parent[a]==a) return a;
+        else {
+            return findRoot(parent[a]);
+        }
+    }
+}
+
+
+```
+
+
+
+
+
+

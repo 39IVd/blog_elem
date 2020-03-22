@@ -12,7 +12,7 @@ categories :
 ![image](./img1.png)
 
    
-# 조건 : 경로가 존재하지 않을 수 있음. 서로 다른 두 정점 사이에 여러 개의 간선이 존재할 수도 있음.
+### 조건 : 경로가 존재하지 않을 수 있음. 서로 다른 두 정점 사이에 여러 개의 간선이 존재할 수도 있음.
 
     모든 정점까지의 경로가 존재한다고 가정했을 때, dijkstra는 n-1번 반복하지만,
     경로가 존재하지 않을 경우 nullpointer exception이 발생한다.
@@ -44,7 +44,7 @@ class node_SP2 {
     }
 
 }
-public class BJ_1753_ShortestPath3 {
+public class Main {
     static Scanner in = new Scanner(System.in);
     static int v, e, k;
     static int[] d = new int[20001];

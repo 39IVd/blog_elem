@@ -1,0 +1,110 @@
+---
+title: "[Algorithm] 백준 4485 : 녹색 옷 입은 애가 젤다지?  "
+date: 2020-03-20
+template: blog
+image: ../images/algorithm.jpg
+description: 
+categories : 
+    - algorithm
+---
+![image](./img1.png)
+
+## 문제 정의 : (N*N)크기의 행렬에서, (0,0)->(N-1,N-1)로 이동하는 데 드는 최소 비용 구하기.
+
+### 한 정점에서 인접한 다른 정점으로 가는 최소 비용을 구한 후, d[][]값이 갱신될 때에만 Priority Queue에 추가한다.
+- d(다음 노드) = Math.min(d(다음 노드), d(현재 노드)+다음 노드의 가중치)
+- d[][]값이 갱신되지 않으면 비용이 그보다 항상 크다는 의미이며 PQ에 추가되지 않으므로, PQ가 빌 때까지 반복한다.
+
+### 알고리즘 :
+1. 모든 노드의 d[][]를 MAX로 초기화한다.
+2. (0,0)을 PQ에 추가한다.
+3. PQ가 빌 때까지 while문을 돌면서,
+    - PQ에서 현재 노드를 꺼낸 후 visited[][]=1로 갱신한다.
+    - 현재 노드에서 상하좌우로 이동한다. 이동한 노드가 방문하지 않은 노드이면,
+    - d[다음 노드]>d[현재 노드]+다음 노드의 가중치이면,
+    - d값을 갱신 후 PQ에 추가한다.
+4. d(N-1,N-1)값을 반환한다.
+
+   
+
+<br><br>
+## Java Code
+
+```java 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+class node_Zelda {
+    int y, x, w;
+    node_Zelda(int y, int x, int w) {
+        this.y = y; this.x = x; this.w = w;
+    }
+}
+
+public class Main {
+    static Scanner in = new Scanner(System.in);
+    static int n;
+    static int[][] map;
+    static int[][] visited;
+    static int[][] d;
+    static PriorityQueue<node_Zelda> pq = new PriorityQueue<>(new Comparator<node_Zelda>() {
+        @Override
+        public int compare(node_Zelda o1, node_Zelda o2) {
+            return o1.w-o2.w;
+        }
+    });
+    static StringBuilder sb = new StringBuilder();
+    static int[] dy = {0, 1, 0, -1};
+    static int[] dx = {1, 0, -1, 0};
+    public static void main(String[] args) {
+        int cnt = 1;
+        while (true) {
+            n = in.nextInt();
+            if(n==0) break;
+            map = new int[n][n];
+            visited = new int[n][n];
+            d = new int[n][n];
+            for(int i=0;i<n;i++) {
+                for(int j=0;j<n;j++) {
+                    map[i][j] = in.nextInt();
+                    d[i][j] = Integer.MAX_VALUE;
+                }
+            }
+            pq.clear();
+            sb.append("Problem "+cnt+": "+dijkstra()+"\n"); 
+            cnt++;
+        }
+        System.out.println(sb);
+    }
+    public static int dijkstra() {
+        pq.add(new node_Zelda(0, 0, map[0][0]));
+        d[0][0] = map[0][0];
+        while (!pq.isEmpty()) {
+            node_Zelda curr = pq.poll();
+            visited[curr.y][curr.x] = 1;
+            for(int i=0;i<4;i++) {
+                int ny = curr.y + dy[i];
+                int nx = curr.x + dx[i];
+                if(ny>=0&&ny<n&&nx>=0&&nx<n) {
+                    if(visited[ny][nx]==0) {
+                        if(d[ny][nx]>d[curr.y][curr.x]+map[ny][nx]) {
+                            d[ny][nx]=d[curr.y][curr.x]+map[ny][nx];
+                            pq.add(new node_Zelda(ny, nx, d[ny][nx]));
+                        }
+                    }
+                }
+            }
+        }
+        return d[n-1][n-1];
+    }
+}
+
+
+```
+
+
+
+
+
+

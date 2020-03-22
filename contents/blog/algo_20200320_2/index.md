@@ -7,6 +7,7 @@ description:
 categories : 
     - algorithm
 ---
+![image](./img1.png)
 
 ## 문제 정의 : Directed Graph에서, 모든 노드에 대해 X에 방문했다가 다시 돌아오는 경로의 최소 비용을 구하라.
 
@@ -17,7 +18,6 @@ categories :
 - (2)를 구하기 위해, 원래 edge 방향 그대로 X에서 모든 노드로 가는 Shortest Path를 구한다.
 - (1)과 (2)에서 각 노드의 d[]를 구한 다음 합한다. 이 중 최대값이 가장 거리가 먼 노드의 비용이다.
 
-![image](./img1.png)
 
    
 
@@ -50,7 +50,7 @@ class node_Party implements Comparable<node_Party> {
     }
 }
 
-public class BJ_1238_Party {
+public class Main {
     static Scanner in = new Scanner(System.in);
     static int n, m, x;
     static int[][] d = new int[1001][2];
