@@ -108,7 +108,6 @@ export const query = graphql `
                     id
                     frontmatter {
                         title
-                        description
                         date
                         categories
                         image {
