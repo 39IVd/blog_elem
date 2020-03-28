@@ -1,13 +1,12 @@
 ---
-title: "[HTML] HTML 태그 정리"
+title: "[CSS] CSS Syntax"
 date: 2020-03-02
 template: blog
-image: ../images/html.jpg
+image: ../images/css.jpg
 description: 
 categories:
     - web
-    - html
-tags: ["tag", "should", "be", "array"]
+    - css
 ---
 
 

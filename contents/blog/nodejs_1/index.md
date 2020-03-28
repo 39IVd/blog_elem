@@ -1,13 +1,12 @@
 ---
-title: "[HTML] HTML 태그 정리"
+title: "[NodeJS] 웹서버 운영"
 date: 2020-03-02
 template: blog
-image: ../images/html.jpg
+image: ../images/nodejs.jpg
 description: 
 categories:
     - web
-    - html
-tags: ["tag", "should", "be", "array"]
+    - nodejs
 ---
 
 

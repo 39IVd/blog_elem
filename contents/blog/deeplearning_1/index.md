@@ -1,13 +1,11 @@
 ---
-title: "[HTML] HTML 태그 정리"
+title: "[Deep Learning] Tensorflow 사용"
 date: 2020-03-02
 template: blog
-image: ../images/html.jpg
+image: ../images/ai.jpg
 description: 
 categories:
-    - web
-    - html
-tags: ["tag", "should", "be", "array"]
+    - deeplearing
 ---
 
 

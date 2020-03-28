@@ -1,5 +1,6 @@
 ---
 title: "[Daily] 일상"
+description: 
 date: 2020-03-03
 template: life
 image: ../images/daily.jpg
