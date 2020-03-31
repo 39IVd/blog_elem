@@ -1,8 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
 import Img from "gatsby-image";
-import Date from "./date";
-import { Calendar } from "./icons";
 import "../style/list-music.less";
 
 class MusicItem extends React.Component {

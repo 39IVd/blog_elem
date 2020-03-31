@@ -1,7 +1,5 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import MusicItems from "./items-music";
-import SectionTitle from "./sectiontitle";
 
 export default function() {
     const query = useStaticQuery(graphql`

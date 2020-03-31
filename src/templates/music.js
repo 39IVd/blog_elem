@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Date from "../components/date";
 import "../style/music-singlepage.less";
-
+//  안쓰는 페이지
 export default function({ data }) {
     return (
         <Layout>

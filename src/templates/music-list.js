@@ -49,7 +49,6 @@ export const query = graphql `
             filter: { fileAbsolutePath: { regex: "/music/" } }
             sort: { fields: [frontmatter___date], order: DESC }
             limit: 24
-            skip: 0
         ) {
             edges {
                 node {
