@@ -109,16 +109,20 @@ class Navbar extends React.Component {
                 >
                     <span></span>
                 </Sidebar>
-                <nav className="text-secondary" ref={c => (this.nav = c)}>
+                <nav
+                    className="web_bar text-secondary"
+                    ref={c => (this.nav = c)}
+                >
                     <a href="#mobilenav" id="menu-open" onClick={this.menuOpen}>
                         <span className="icon">
                             <Hamburger />
                         </span>
                     </a>
+                    {/* web 화면 상단 바 */}
                     <Link to="/">
-                        <Logo />
+                        <Logo className="web_logo" />
                     </Link>
-                    <NavLinks />
+                    <NavLinks className="web_links" />
                 </nav>
                 {placeholder && (
                     <div

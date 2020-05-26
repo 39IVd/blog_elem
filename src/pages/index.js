@@ -75,14 +75,11 @@ class IndexPage extends React.Component {
                     lang="en"
                     title={this.props.data.site.siteMetadata.title}
                 />
-                <div
-                    className="wall"
-                    style={{ height: "100px" }}
-                >
+                <div className="wall" style={{ height: "100px" }}>
                     <div className="intro container">
                         <div className="main-title text-primary">
                             <svg
-                                width="90%"
+                                // width="90%"
                                 height="220px"
                                 viewBox="0 0 100 100"
                                 preserveAspectRatio="xMidYMid slice"
@@ -119,10 +116,9 @@ class IndexPage extends React.Component {
                                               .title}
                                 </text>
                             </svg>
-                        </div> 
+                        </div>
                     </div>
-                    <div className="social-buttons"
-                     style={{ top: "250px" }}>
+                    <div className="social-buttons" style={{ top: "250px" }}>
                         <SocialLinks />
                     </div>
                 </div>

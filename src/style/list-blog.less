@@ -1,26 +1,27 @@
-@fontBold: 'Work Sans', sans-serif;
+@fontBold: "Work Sans", sans-serif;
 @fontNormal: "Poppins", sans-serif;
 // @fontPostList : "굴림", Gulim,MS Courier New, Prestige, Everson Mono;
-@fontPostList : Arial, Helvetica, sans-serif;
-@background: #FAFAFA;
+@fontPostList: Arial, Helvetica, sans-serif;
+@background: #fafafa;
 @textPrimary: #141c32;
-@textSecondary: #6888DF;
-@textTertiary:#848EA8;
+@textSecondary: #6888df;
+@textTertiary: #848ea8;
 @textNormal: #333;
 @colorPrimary: @textSecondary;
-@colorSecondary: #F55555;
-@colorError : #F55555;
-@colorSuccess : #4CAF50;
+@colorSecondary: #f55555;
+@colorError: #f55555;
+@colorSuccess: #4caf50;
 #blog {
     // blog list 블로그 리스트 관련 css
     // blog categories
     font-family: @fontPostList;
+    padding-top: 50px;
     .row {
         // content : "";
         // display: table;
         // clear : both;
         .categoryBar {
-            font-family:@fontNormal;
+            font-family: @fontNormal;
             height: 100%;
             width: 200px;
             position: fixed;
@@ -40,9 +41,8 @@
                     font-size: 18px;
                     font-weight: bold;
                     // font-family: Arial
-                    color: #6888DF;
+                    color: #6888df;
                     display: block;
-
                 }
                 .cat_2 {
                     font-size: 14px;
@@ -51,10 +51,9 @@
                 // scroll할 때 변화
                 :hover {
                     // color: #E6ACFF;
-                    color: #C265A6;
+                    color: #c265a6;
                 }
             }
-
         }
         .posts {
             // margin-left : 150px
@@ -67,54 +66,65 @@
     }
     // 블로그 리스트 각 item의 style
     .item {
-		// width, padding %로 변경하면 밀릴 때 아이템 겹치는 문제 없어짐
-        // padding: 1%;
+        // width, padding %로 변경하면 밀릴 때 아이템 겹치는 문제 없어짐
         margin-right: 3%;
+        margin: 1%;
         width: 47%;
-        height: auto;
+        height: 60vh;
         margin-bottom: 3%;
         overflow: hidden;
-        box-shadow:  1px 1px 1px 1px #C2C2C2;
+        box-shadow: 1px 1px 1px 1px #c2c2c2;
+        border-radius: 10px;
         .box {
-            border-radius: 3px;
-			position: relative;
-            padding-top: 50%; 
+            // padding-top: 50%;
             // height: 370px;
             // text-align: center;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             .image {
-                background-color: #FAFAFA;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin : 1px;
-                max-width: 100%;
-                // height: 370px;	
-                opacity: 30%;
+                background-color: #fafafa;
+                position: relative;
+                // position: absolute;
+                // top: 0;
+                // left: 0;
+                // right: 0;
+                // bottom: 0;
+                // margin: 1px;
+                // max-width: 100%;
+                // // height: 370px;
+                // opacity: 30%;
                 filter: blur(3px);
+                .blog_item_img {
+                    height: 25vh;
+                    width: auto;
+                }
             }
-            // image 하단 내용
-            .content {
-				position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                padding: 5%;
-                color: @textPrimary;
 
-				// padding-top: 65%; /* 1:1 ratio */
+            // image 하단 내용
+            .overlay-link {
+                position: relative;
+            }
+            .content {
+                // position: absolute;
+                // top: 0;
+                // left: 0;
+                // right: 0;
+                // bottom: 0;
+                // padding: 5%;
+                color: @textPrimary;
+                padding: 5%;
+
+                // padding-top: 65%; /* 1:1 ratio */
                 h3 {
-					font-size: 21px;
-					font-family: Arial, Helvetica, sans-serif;
-					font-weight: bold;
+                    font-size: 21px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
                 }
 
                 p {
                     margin: 15px 0;
                     font-size: 15px;
-                    
                 }
                 .min-read {
                     font-size: 13px;
@@ -137,11 +147,10 @@
                 .excerpt {
                     margin-top: 10%;
                     // color: @textTertiary;
-                }  
+                }
             }
         }
     }
-
 }
 
 // moblie 화면에서의 blog list
@@ -165,48 +174,46 @@
                 left: 0;
             }
             .posts {
-				width: 100%;
+                width: 100%;
                 height: 200px;
                 left: 0;
                 padding-left: 0;
             }
-		}
-		.item {
-			// width, padding %로 변경하면 밀릴 때 아이템 겹치는 문제 없어짐
-			// padding: 1%;
+        }
+        .item {
+            // width, padding %로 변경하면 밀릴 때 아이템 겹치는 문제 없어짐
+            // padding: 1%;
             width: 100%;
             height: 270px;
             // overflow: hidden;
             // height: 100%;
             // height: wrap-content;
-			.box {
+            .box {
                 // border: 1px solid #9D9D9D;
-				position: relative;
-				// padding-top: 50%; 
+                position: relative;
+                // padding-top: 50%;
                 // overflow: hidden;
                 // height: auto;
-				.image {
-					background-color: #FAFAFA;
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					max-width: 100%;
-					// height: 180px;	
-			
-				}
-				// // image 하단 내용
-				// .content {
-				// 	position: absolute;
-				// 	top: 0;
-				// 	left: 0;
-				// 	right: 0;
-				// 	bottom: 0;
+                .image {
+                    background-color: #fafafa;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    max-width: 100%;
+                    // height: 180px;
+                }
+                // // image 하단 내용
+                // .content {
+                // 	position: absolute;
+                // 	top: 0;
+                // 	left: 0;
+                // 	right: 0;
+                // 	bottom: 0;
 
-				// }
-			}
-		}
+                // }
+            }
+        }
     }
-
 }
