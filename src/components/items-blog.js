@@ -30,24 +30,24 @@ class BlogItem extends React.Component {
             // grid col sm 방식.
             <div className="item col s12 m1">
                 <div className="box">
-                    <div className="image">
-                        <Img
-                            className="blog_item_img"
-                            fluid={
-                                this.props.data.node.frontmatter.image
-                                    .childImageSharp.fluid
-                            }
-                        />
-                        <Link
-                            to={this.props.data.node.fields.slug}
-                            title={this.props.data.node.frontmatter.title}
-                            aria-label={this.props.data.node.frontmatter.title}
-                            className="overlay-link"
-                            style={{ opacity: 0 }}
-                        >
-                            {this.props.data.node.frontmatter.title}
-                        </Link>
-                    </div>
+                    <Link
+                        to={this.props.data.node.fields.slug}
+                        title={this.props.data.node.frontmatter.title}
+                        aria-label={this.props.data.node.frontmatter.title}
+                        className="overlay-link"
+                        style={{ opacity: 0 }}
+                    >
+                        <div className="image">
+                            <Img
+                                className="blog_item_img"
+                                fluid={
+                                    this.props.data.node.frontmatter.image
+                                        .childImageSharp.fluid
+                                }
+                            />
+                        </div>
+                    </Link>
+
                     <Link
                         to={this.props.data.node.fields.slug}
                         title={this.props.data.node.frontmatter.title}
@@ -55,18 +55,14 @@ class BlogItem extends React.Component {
                     >
                         <div className="content">
                             <h3 className="text-primary">
-                                <Link
+                                {this.props.data.node.frontmatter.title}
+                                {/* <Link
                                     to={this.props.data.node.fields.slug}
                                     title={
                                         this.props.data.node.frontmatter.title
                                     }
-                                >
-                                    {this.props.data.node.frontmatter.title}
-                                </Link>
+                                ></Link> */}
                             </h3>
-                            <p className="text-tertiary">
-                                {this.props.data.node.frontmatter.description}
-                            </p>
                             <p className="text-tags">{cats}</p>
                             <p className="min-read">
                                 {this.props.data.node.timeToRead} min read
@@ -87,7 +83,7 @@ class BlogItem extends React.Component {
                                     placeholder={"..."}
                                 /> */}
                             </p>
-                            <p className="excerpt">
+                            <p className="excerpt text-primary">
                                 {this.props.data.node.excerpt.slice(0, 100)}...{" "}
                             </p>
                         </div>

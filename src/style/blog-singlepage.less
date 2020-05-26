@@ -1,131 +1,147 @@
 // @content_font : 'Tahoma';
 // @content_font :"굴림", Gulim,MS Courier New, Prestige, Everson Mono;
-@content_font : Arial;
-@fontBold: 'Work Sans', sans-serif;
-.blog-post{
-	padding: 30px 0;
-	margin-left: 100px;
-	margin-right: 100px;
-	font-family: @content_font;
-	.banner{
-		margin-bottom: 80px;
-	}
-	.head{
-		text-align: center;
-		font-size: 10px;
-		
-		h1{
-			margin: 15px 0;
-			font-family: @content_font;
-		}
-	}
-	.post-date {
-		// display: flex;
-		// align-items: center;
-		font-size: 17px;
+@content_font: Arial;
+@fontBold: "Work Sans", sans-serif;
+.blog-post {
+    padding: 30px 0;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: @content_font;
+    .banner {
+        margin-bottom: 80px;
+    }
+    .head {
+        text-align: center;
+        font-size: 10px;
 
-		.icon {
-			// margin-right: 10px;
-		}
-	}
-	
+        h1 {
+            margin: 15px 0;
+            font-family: @content_font;
+        }
+    }
+    .post-date {
+        // display: flex;
+        // align-items: center;
+        font-size: 17px;
 
-	.content{
-		font-size: large; 
-		margin-left: 30px;
-		margin-right: 30px;
-		justify-content: center;
-		margin-top: 80px;
-		margin-bottom: 150px;
-		font-family: @content_font;
-		line-height: 180%;
-		// text-align: start;
-		
-		h1, h2, h3, h4, h5, h6{
-			line-height: 200%;
-		}
-		h1 { font-size: xx-large ;}
-		h2 { font-size: x-large;}
-		h3 { font-size: larger;}
-		h4 {font-size: large;}
+        .icon {
+            // margin-right: 10px;
+        }
+    }
 
-		.gatsby-resp-image-wrapper{
-			margin-left: 0 !important;
-		}
-		
-		img{
-			max-width: 100%;
-		}
+    .content {
+        font-size: large;
+        margin-left: 30px;
+        margin-right: 30px;
+        justify-content: center;
+        margin-top: 80px;
+        margin-bottom: 150px;
+        font-family: @content_font;
+        line-height: 180%;
+        // text-align: start;
 
-		ul{
-			li{
-				margin-left: 20px;
-				// margin-top: 10px;
-			}
-		}
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 200%;
+        }
+        h1 {
+            font-size: xx-large;
+        }
+        h2 {
+            font-size: x-large;
+        }
+        h3 {
+            font-size: larger;
+        }
+        h4 {
+            font-size: large;
+        }
 
-		blockquote{
-			padding: 10px;
-			margin: 30px 0;
-			p{
-				margin: 0;
-			}
-		}
-		
-	}
+        .gatsby-resp-image-wrapper {
+            margin-left: 0 !important;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        ul {
+            li {
+                margin-left: 20px;
+                // margin-top: 10px;
+            }
+        }
+
+        blockquote {
+            padding: 10px;
+            margin: 30px 0;
+            p {
+                margin: 0;
+            }
+        }
+        code {
+            color: #103cb5;
+        }
+    }
 }
 
-#latest-posts{
-	font-family: Arial, Helvetica, sans-serif;
-	h2 {
-		// recent posts 글자 크기
-		font-size: 37px;
-		color: #6888DF;
-	}
-	.row > .col{
-		padding: 30px;
-		h3{
-			font-size: 20px;
-			margin: 15px 0;
-		}
+#latest-posts {
+    font-family: Arial, Helvetica, sans-serif;
+    h2 {
+        // recent posts 글자 크기
+        font-size: 37px;
+        color: #6888df;
+    }
+    .row > .col {
+        padding: 30px;
+        h3 {
+            font-size: 20px;
+            margin: 15px 0;
+        }
 
-		.image{
-			position: relative;
-		}
+        .image {
+            position: relative;
+        }
 
-		p{
-			font-size: 15px;
-			margin: 10px 0;
-		}
-	}
+        p {
+            font-size: 15px;
+            margin: 10px 0;
+        }
+    }
 }
 
-@media only screen and (max-width: 800px){
-	.blog-post{
-		padding: 0;
-		margin:0;
-		.content{
-			padding: 0 10px;
-			font-size: small;
-			h2, h3 { font-size: large;}
-			code {
-				font-size: x-small;
-			}
-		}
-	
-	}
-	.head{
-		text-align: center;
-		font-size: 5px;
-		h1{
-			font-size: x-large;
-			margin: 15px 0;
-		}
-	}
-	#latest-posts{
-		h2 {
-			font-size: 23px;
-			color: #6888DF;
-		}
-	}
+@media only screen and (max-width: 800px) {
+    .blog-post {
+        padding: 0;
+        margin: 0;
+        .content {
+            padding: 0 10px;
+            font-size: small;
+            h2,
+            h3 {
+                font-size: large;
+            }
+            code {
+                font-size: x-small;
+            }
+        }
+    }
+    .head {
+        text-align: center;
+        font-size: 5px;
+        h1 {
+            font-size: x-large;
+            margin: 15px 0;
+        }
+    }
+    #latest-posts {
+        h2 {
+            font-size: 23px;
+            color: #6888df;
+        }
+    }
 }
