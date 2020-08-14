@@ -193,8 +193,9 @@
             .box {
                 // border: 1px solid #9D9D9D;
                 position: relative;
+                // position: absolute;
                 // padding-top: 50%;
-                // overflow: hidden;
+                overflow: hidden;
                 // height: auto;
                 .image {
                     background-color: #fafafa;
@@ -204,17 +205,20 @@
                     right: 0;
                     bottom: 0;
                     max-width: 100%;
+                    .blog_item_img {
+                        opacity: 30%;
+                        padding: 0;
+                    }
                     // height: 180px;
                 }
                 // // image 하단 내용
-                // .content {
-                // 	position: absolute;
-                // 	top: 0;
-                // 	left: 0;
-                // 	right: 0;
-                // 	bottom: 0;
-
-                // }
+                .content {
+                    // position: absolute;
+                    top: 0;
+                    // left: 0;
+                    // right: 0;
+                    // bottom: 0;
+                }
             }
         }
     }

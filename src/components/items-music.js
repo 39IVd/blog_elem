@@ -11,28 +11,19 @@ class MusicItem extends React.Component {
 
     render() {
         return (
-            <div className="item col x12 s2">
+            <div className="item col s2 m2">
                 <div className="box">
-                        <p className="genre">
-                            {this.props.data.node.frontmatter.genre}
-                        </p>
+                    <p className="genre">
+                        {this.props.data.node.frontmatter.genre}
+                    </p>
                     <div className="image">
-                        <Img className="music_item_img"
+                        <Img
+                            className="music_item_img"
                             fluid={
                                 this.props.data.node.frontmatter.image
                                     .childImageSharp.fluid
                             }
                         />
-                        {/* <Link
-                            to={this.props.data.node.fields.slug}
-                            title={this.props.data.node.frontmatter.title}
-                            aria-label={this.props.data.node.frontmatter.title}
-                            className="overlay-link"
-                            style={{ opacity: 0 }}
-                        >
-                            {this.props.data.node.frontmatter.title}
-                        </Link> */}
-                        
                     </div>
                     <div className="content">
                         <h3 className="text-primary">

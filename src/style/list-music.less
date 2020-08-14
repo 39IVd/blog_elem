@@ -1,120 +1,122 @@
-#music{
-	.row {
-		.posts {
-			height : wrap-content;
-		}
-	}
-	.item{
-		padding: 1%;
-		margin-bottom: 3%;
-		.box{
-			position: relative;
-			// width: 180px; height: 260px;
-			width: 100%; height: 80%;
-			text-align: center;
-			.genre {
-				// width: 100px;
-				// margin-left: 50px; margin-right: 50px;
-				border: 0.5px solid #848EA8;
-				border-radius: 2px;
-				color: #848EA8;
-				font-weight: bold;
-				// font-style: italic;
-				// margin-bottom: 2px;
-				// border-left-width: 20px; border-right-width: 20px;
-				font-size: 13px;
-				// margin-left: 5px; margin-right: 5px;
-			}
-			.image{
-				position: relative;
-				// height: 180px;
-				background-color: #FAFAFA;
-				margin-bottom: 5%;
-			}
-			// image 하단 내용
-			.content{	
-				// padding: 20px 10px;
-				text-align: center;
-				h3{
-					font-size: 17px;
-					font-family: Arial, Helvetica, sans-serif;
-					font-weight: bold;
-				}
+#music {
+    .row {
+        .posts {
+            height: wrap-content;
+        }
+    }
+    .item {
+        padding: 1%;
+        margin-bottom: 3%;
+        display: grid;
+        grid-template-rows: repeat(2, 120px);
+        // grid-template-columns: repeat(3, 150px);
+        align-content: start;
+        .box {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            text-align: center;
+            .genre {
+                // width: 100px;
+                // margin-left: 50px; margin-right: 50px;
+                border: 0.5px solid #848ea8;
+                border-radius: 2px;
+                color: #848ea8;
+                font-weight: bold;
+                // font-style: italic;
+                // margin-bottom: 2px;
+                // border-left-width: 20px; border-right-width: 20px;
+                font-size: 13px;
+                // margin-left: 5px; margin-right: 5px;
+            }
+            .image {
+                position: relative;
+                // height: 180px;
+                background-color: #fafafa;
+                margin-bottom: 5%;
+            }
+            // image 하단 내용
+            .content {
+                // padding: 20px 10px;
+                text-align: center;
+                h3 {
+                    font-size: 17px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                }
 
-				p{
-					// margin: 15px 0;
-					font-size: 14px;
-				}
-				
-				.date{
-					display: flex;
-    				align-items: center;
+                p {
+                    // margin: 15px 0;
+                    font-size: 14px;
+                }
 
-					.icon{
-						margin-right: 10px;
-					}
-				}
+                .date {
+                    display: flex;
+                    align-items: center;
 
-			}
-		}
-	}
-
+                    .icon {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
 
-@media only screen and (max-width: 800px){
-	#music {
-		padding: 3px;
-		.row {
-			.categoryBar {
-				display: none;
-				visibility: none;
-				width : 0;
-				position: absolute;
-				top : 0;
-				left: 0;
-			}
-			.posts {
-				height : wrap-content;
-				left: 0;
-				padding-left: 0;
-				// width: 100%;
-			}
-		}
-		.item{
-			// padding: 10px;
-			padding : 0.5%;
-			margin-bottom: 10px;
-			// display: grid;
-			// grid-template-columns: 100px 100px 100px;
-			// grid-template-rows: 50px 50px;
-			.box{
-				// position: relative;
-				// width: 40%; height: 80%;
-				// width: 130px; height: 200px;
-				.genre { font-size: 10px;}
-				
-				.image{
-					// position: relative;
-					// height: 130px;
-					// line-height: 200px;
-					// vertical-align: middle;
-					background-color: #FAFAFA;
-					margin-bottom: 5px;
-				}
-				// image 하단 내용
-				.content{	
-					// padding: 20px 10px;
-					h3{
-						font-size: 11px;
-					}
-					p{
-						// margin: 15px 0;
-						font-size: 9px;
-					}
-					
-				}
-			}
-		}
-	}
-	
+@media only screen and (max-width: 800px) {
+    #music {
+        padding: 3px;
+        .row {
+            .categoryBar {
+                display: none;
+                visibility: none;
+                width: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .posts {
+                height: wrap-content;
+                left: 0;
+                padding-left: 0;
+                // width: 100%;
+            }
+        }
+        .item {
+            // padding: 10px;
+            padding: 0.5%;
+            margin-bottom: 10px;
+            // display: grid;
+            // grid-template-columns: 100px 100px 100px;
+            // grid-template-rows: 50px 50px;
+            .box {
+                // position: relative;
+                // width: 40%; height: 80%;
+                // width: 130px; height: 200px;
+                .genre {
+                    font-size: 10px;
+                }
+
+                .image {
+                    // position: relative;
+                    // height: 130px;
+                    // line-height: 200px;
+                    // vertical-align: middle;
+                    background-color: #fafafa;
+                    margin-bottom: 5px;
+                }
+                // image 하단 내용
+                .content {
+                    // padding: 20px 10px;
+                    h3 {
+                        font-size: 11px;
+                    }
+                    p {
+                        // margin: 15px 0;
+                        font-size: 9px;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -107,17 +107,15 @@ exports.createPages = ({ graphql, actions }) => {
         const MusicItems = result.data.music.edges;
         const MusicItemsPerPage =
             result.data.limitPost.siteMetadata.musicItemsPerPage;
-        const numMusicItems = Math.ceil(
-            MusicItems.length / MusicItemsPerPage
-        );
+        const numMusicItems = Math.ceil(MusicItems.length / MusicItemsPerPage);
 
         Array.from({ length: numMusicItems }).forEach((_, i) => {
             createPage({
                 path: i === 0 ? `/music` : `/music/${i + 1}`,
                 component: path.resolve("./src/templates/music-list.js"),
                 context: {
-                    limit: blogPostsPerPage,
-                    skip: i * blogPostsPerPage,
+                    limit: MusicItemsPerPage,
+                    skip: i * MusicItemsPerPage,
                     numPages: numMusicItems,
                     currentPage: i + 1
                 }
@@ -127,9 +125,7 @@ exports.createPages = ({ graphql, actions }) => {
         const LifeItems = result.data.life.edges;
         const LifeItemsPerPage =
             result.data.limitPost.siteMetadata.lifeItemsPerPage;
-        const numLifeItems = Math.ceil(
-            LifeItems.length / LifeItemsPerPage
-        );
+        const numLifeItems = Math.ceil(LifeItems.length / LifeItemsPerPage);
 
         Array.from({ length: numLifeItems }).forEach((_, i) => {
             createPage({
@@ -143,8 +139,6 @@ exports.createPages = ({ graphql, actions }) => {
                 }
             });
         });
-
-        
 
         result.data.blog.edges.forEach(({ node }) => {
             let template =
